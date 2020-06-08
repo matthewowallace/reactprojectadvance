@@ -14,22 +14,26 @@ import SocialPageComponent from "./pages/social/SocialPageComponent";
 import SocialList from "./pages/social/socialList";
 import {ThemeProvider} from "styled-components";
 import * as theme from "./components/theme";
+import { motion,AnimatePresence  } from "framer-motion"
+
 
 function App() {
   return (
+
       <Router>
           <ThemeProvider theme={theme}>
           <NavBar />
           <div className="App">
               <Switch>
                   <Route path={"/"} component={Homepage} exact/>
-                  <Route path={"/SocialPagelist"} component={SocialList} />
+                   <Route path={"/SocialPagelist"} component={SocialList} />
                   <Route path={"/SocialPage/:name"} component={SocialPageComponent} />
                   <Route component={NotFoundPage} />
               </Switch>
           </div>
           </ThemeProvider>
       </Router>
+
   );
 }
 

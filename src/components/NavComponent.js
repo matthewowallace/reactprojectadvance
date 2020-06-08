@@ -1,7 +1,11 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import Button from './Button';
+import Button from '../components/Button';
 import styled from 'styled-components'
+import { motion,AnimatePresence  } from "framer-motion"
+
+
+// Component  Styling //////////////////////////////////////////////////////////
 
 const Navlink = styled.li`
     list-style:none;
@@ -14,36 +18,51 @@ const Nav = styled.div`
  padding: 10px 10%;
  background-color:#5CBDD0;
 `
+//  Component  Styling //////////////////////////////////////////////////////////
 
-/*
-const Seacrh  = () => {
 
+// Animation  Styling //////////////////////////////////////////////////////////
+const easing = [.9, -.09, .01, .99]
+const fadeInRight = {
+    initial: {
+        x:-200,
+        opacity:0
+    },
+    animate:{
+        x: 0,
+        opacity: 1,
+        transition:{
+            duration: 2,
+            ease: easing
+        }
+    }
 }
-("#search-icon").click(function() {
-    (".nav").toggleClass("search");
-    (".nav").toggleClass("no-search");
-    (".search-input").toggleClass("search-active");
-});
+// End of Animation  Styling //////////////////////////////////////////////////////////
 
-('.menu-toggle').click(function(){
-    (".nav").toggleClass("mobile-nav");
-    (this).toggleClass("is-active");
-});
-*/
 
 const NavBar = () =>(
-    <>
+    <motion.div animate={'animate'} initial={'initial'}>
              <Nav className={"navigator"}>
-                 <h2 className={"Brand"}><Link to={"/"} style={{ textDecoration: 'none'}}>Young Creator</Link></h2>
-                 <Navlink>
-                     <ul className="nav">
-                         <li className="nav-item"><Link to={"/SocialPagelist"} style={{ textDecoration: 'none'}}>Young Creator</Link></li>
-                         <li>About</li>
-                         <li>Contact</li>
-                         <li><Link to={"/"} style={{ textDecoration: 'none'}}>LOGIN / CREATE ACCOUNT</Link></li>
-                     </ul>
-                 </Navlink>
+                 <h2 className={"Brand"}><Link to={"/"} style={{ textDecoration: 'none'}}>YOUNG CREATOR</Link></h2>
+                 <motion.div>
+                     <Navlink>
+                         <ul className="nav">
+                             <motion.div  initial={{x:-200 , opacity:0 }} transition={{duration:4 ,ease:easing}}  animate={{x:0 , opacity:1 }}>
+                                 <li className="nav-item"><Link to={"/SocialPagelist"} style={{ textDecoration: 'none'}}>Young Creator</Link></li>
+                             </motion.div>
+                             <motion.div  initial={{x:-200 , opacity:0 }} transition={{duration:3 ,ease:easing}} animate={{x:0 , opacity:1 }}>
+                                 <li>About</li>
+                             </motion.div>
+                             <motion.div  initial={{x:-200 , opacity:0 }} transition={{duration:2 ,ease:easing}} animate={{x:0 , opacity:1 }}>
+                                 <li>Contact</li>
+                             </motion.div>
+                             <motion.div  initial={{x:-200 , opacity:0 }} transition={{duration:1 ,ease:easing}} animate={{x:0 , opacity:1 }}>
+                               <li><Link to={"/"} style={{ textDecoration: 'none'}}>LOGIN / CREATE ACCOUNT</Link></li>
+                             </motion.div>
+                         </ul>
+                     </Navlink>
+                 </motion.div>
              </Nav>
-    </>
+    </motion.div>
 );
 export default NavBar;
