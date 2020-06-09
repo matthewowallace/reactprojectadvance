@@ -1,4 +1,4 @@
-const posts = [
+const posts =  [
     {
         name: 'FirstPost',
         title: 'How to create your first Post',

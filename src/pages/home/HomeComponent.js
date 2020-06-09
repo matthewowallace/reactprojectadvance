@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AboutUs from "./AboutusComponent";
 import ContactUs from "./ContactusComponent";
@@ -5,7 +6,8 @@ import Footer from "./FooterComponent";
 import TopContributorComponent from "./TopContributorComponent";
 import styled from "styled-components";
 import ControlledCarousel from "../../components/homeSlider";
-import { motion,AnimatePresence  } from "framer-motion"
+import { motion,AnimatePresence  } from "framer-motion";
+import NavMini from "../../components/MIniNav/MiniNav";
 
 const Welcome = styled.div`
       color:#fff;
@@ -22,7 +24,7 @@ const Welcome = styled.div`
 
 const Homepage = () =>(
     <>
-            <AnimatePresence>
+                <NavMini />
                 <Welcome>
                 <motion.div
                          animate={{scale: 1}}
@@ -33,10 +35,10 @@ const Homepage = () =>(
                 </Welcome>
                 <ControlledCarousel/>
                 <AboutUs />
-                <TopContributorComponent />
+                <TopContributorComponent/>
                 <ContactUs />
                 <Footer />
-            </AnimatePresence>
+
     </>
 );
 export  default Homepage;

@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'react';
 // Routing components
 import{
