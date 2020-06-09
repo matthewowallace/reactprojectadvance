@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'react';
 // Routing components
 import{
@@ -8,7 +9,6 @@ import{
 // Write in alphabetical order
 import './App.css';
 import Homepage from "./pages/home/HomeComponent";
-import NavBar from "./components/NavComponent";
 import NotFoundPage from "./pages/Error404/NotFoundPage";
 import SocialPageComponent from "./pages/social/SocialPageComponent";
 import SocialList from "./pages/social/socialList";
@@ -22,7 +22,6 @@ function App() {
 
       <Router>
           <ThemeProvider theme={theme}>
-          <NavBar />
           <div className="App">
               <Switch>
                   <Route path={"/"} component={Homepage} exact/>

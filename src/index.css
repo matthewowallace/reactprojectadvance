@@ -1,13 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+@font-face {font-family: "Raisonne DemiBold";
+    src: url("//db.onlinewebfonts.com/t/05d0872c73920fc4541caa9c7950f686.eot");
+    src: url("//db.onlinewebfonts.com/t/05d0872c73920fc4541caa9c7950f686.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/05d0872c73920fc4541caa9c7950f686.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/05d0872c73920fc4541caa9c7950f686.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/05d0872c73920fc4541caa9c7950f686.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/05d0872c73920fc4541caa9c7950f686.svg#Raisonne DemiBold") format("svg"); }
+
 body {
   margin: 0;
-  font-family: 'Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Raisonne DemiBold','Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    overflow:hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+li{
+    list-style: none;
+}
+
+
+.main--mav{
+    list-style:none;
+    display:inline-block;
+}
+
+@media (max-width: 768px) {
+
+    .main--mav{
+        position:absolute;
+        right:0;
+        height:92vh;
+        top:8vh;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        width:40%;
+        background-color:#000;
+    }
+
+    .Brand{
+        margin-left: 28%;
+        font-size: 36px;
+        margin-top: -6px;
+    }
+    .Create{
+        display: none;
+    }
+}
+
+.nav{
+    position: absolute;
+    top:20px;
+    left:30%
+}
+
+.nav li{
+    padding: 0 14px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex: 1 0 auto;
+}
+
+.Create{
+    position: absolute;
+    top:3%;
+    left: 88%;
+}
+
+.Create li a{
+    font-size: 12px;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    box-shadow: 1px 1px 9px 2px rgba(60, 84, 107,0.3),
+    inset -1px -1px 9px 2px rgba(60, 84, 107,0.3);
+    background-color: rgba(60, 84, 107,0.6);
+    transition: 1s;
+}
+
+.Create li a:hover{
+  background-color: #fff;
+  color: #222;
+    box-shadow: 1px 1px 9px 2px rgba(255,255,255,0.3),
+    inset -2px -2px 9px 2px rgba(255,255,255,0.3);
+}
+
+.navigator a:hover{
+    color:#222;
+}
+
+.navigator a{
+    color:#fff;
+    font-size: 12px;
+}
+
+.Brand a{
+    font-size: 50%;
+}
+.burger{
+    display: none;
+    padding: 1px;
+}
+
+.burger:hover{
+    filter: brightness(1.2);
+    box-shadow: inset 1px 1px 3px #222;
+}
+
+.burger:active{
+    transform: rotate(90deg);
+}
+
+.burger div{
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px;
+}
+.control--line div{
+    width: 350px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px;
+    opacity: 0.3;
+}
+.control--line div:nth-last-child(1){
+    width: 850px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px;
+    opacity: 0.3;
+}
+
+.c--line1{
+    position: absolute;
+    top:96%;
+    left: 67%;
+}
+
+.c--line2{
+    position: absolute;
+    top:49%;
+    left: 70%;
+    transform: rotate(90deg);
+}
+
+
+.burger .line1{
+    width: 10px;
+}
+
+.burger .line2{
+    width: 20px;
+}
+
+@media screen and (max-width: 768px){
+    .burger{
+        display: block;
+    }
+}
+
+
+:root{
+  --bg: #5CBDD0;
+  --bg-accent: #484a4d;
+  --text-color: #fff;
+  --nav-size:60px;
+  --border:1px solid #eee;
+  --border-radius: 8px;
+  --speed:500ms;
+}
+
+
+.mini-navbar{
+   height: var(--nav-size);
+  background-color: var(--bg);
+  padding: 0 1rem;
+  border-bottom: var(--border);
+}
+
+.mini-navbar-nav{
+   max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.m-nav-item{
+    width: calc(var(--nav-size) * 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-nav-item a:hover{
+    text-decoration: none;
+}
+
+.icon-button{
+    --button-size: calc(var(--nav-size) * 0.5);
+    width: var(--button-size);
+    height: var(--button-size);
+    padding: 5px ;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+.icon-button:hover {
+    filter:brightness(1.2);
+}
+
+.icon-button svg{
+    fill: var(--text-color);
+    width: 30px;
+    height: 30px;
+}
+
+.m-dropdown{
+    position: absolute;
+    top: 120px;
+    width:250px;
+    transform: translateX(-45%);
+    background-color: rgba(255,255,255,1);
+    overflow:hidden;
+    transition: height var(--speed) ease;
+}
+
+.menu{
+    width: 100%;
+}
+
+.menu-item{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    transition: background var(--speed) ;
+    padding: 0.5rem;
+}
+
+.menu-item:hover{
+    background-color: #eee;
+}
+
+.icon-right{
+    margin-left: auto;
+}
+.menu-primary-enter{
+    position: absolute;
+    transform: translateX(-110%);
+}
+
+.menu-primary-enter-active{
+    transform: translateX(0%);
+    transition: all var(--speed) ease;
+}
+
+.menu-primary-exit{
+ position: absolute;
+}
+
+.menu-primary-exit-active{
+    transform: translateX(-110%);
+    transition: all var(--speed) ease;
+}
+
+.menu-secondary-enter{
+    transform: translateX(110%);
+}
+
+.menu-secondary-enter-active{
+    transform: translateX(0%);
+    transition: all var(--speed) ease;
+}
+
+.menu-secondary-exit{
+
+}
+
+.menu-secondary-exit-active{
+    transform: translateX(110%);
+    transition: all var(--speed) ease;
+}
+
+.landingpageBtn{
+    position: absolute;
+    top:94%;
+    left:2%;
+}
+/* End of Landing Page    */
+
+.carousel-control-prev-icon{
+    position: absolute;
+    top: 388%;
+    left: 580%;
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.carousel-control-next-icon{
+    position: absolute;
+    top:388%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: inset -2px -3px 6px rgba(60, 84, 107,0.7);
+
+}
+
+a .carousel-control-prev-icon{
+    width: 50px;
+    height: 50px;
+    background-size: 15px;
+}
+
+a .carousel-control-next-icon{
+    width: 50px;
+    height: 50px;
+    background-size: 15px;
+    background-color: black;
+}
+
+.logo{
+
+   width: 700px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
 }

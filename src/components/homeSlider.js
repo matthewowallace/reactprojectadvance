@@ -7,7 +7,7 @@ const Slider = styled.div`
       color:#fff;
       padding 0px;
       font-size:13px;
-      background-color:#5CBDD0;
+      
       font-family: 'Raisonne DemiBold';     
 `
 const SliderCaption = styled.h5`
@@ -36,7 +36,13 @@ const ControlledCarousel = () => {
                 <SliderCaption>Nulla vitae elit libero, a pharetra augue mollis interdum.</SliderCaption>
             </Carousel.Item>
         </Carousel>
-            <Button>JOIN US</Button>
+            <div className={"landingpageBtn"}>
+                <Button>JOIN US</Button>
+            </div>
+            <div className={"control--line"}>
+                <div className={"c--line1"}></div>
+                <div className={"c--line2"}></div>
+            </div>
         </Slider>
 
     );
