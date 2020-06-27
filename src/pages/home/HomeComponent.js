@@ -11,15 +11,14 @@ import NavMini from "../../components/MIniNav/MiniNav";
 import image from '../../assets/youth.png';
 import logo from '../../assets/LOGO.svg';
 import NavBar from "../../components/NavComponent";
+import Socialnav from "../../components/SocialIcon/SocialNav";
 
 const Welcome = styled.div`
-      margin-top:13%;
-     
-      padding 0px;
-      text-shadow:2px 2px 2px rgba(0,0,0,0.3);       
-      @media (max-width: 768px) {
-      font-size:60px;
-  }
+      margin-top:13%;   
+      padding 0px;     
+       @media screen and (max-width: 768px){
+       margin-top: 100px;
+   }
 `
 const WelcomeBG = styled.div`
       height:100vh; 
@@ -30,7 +29,10 @@ const WelcomeBG = styled.div`
 const LOGO = styled.div`
    width: 500px;
    margin-left:36%;
-  }
+   @media screen and (max-width: 768px){
+       width: 200px;
+       margin-left:30%;
+   }
 `
 
 
@@ -50,6 +52,7 @@ const Homepage = () =>(
                 </motion.div>
                     <ControlledCarousel/>
                 </Welcome>
+            <Socialnav/>
         </WelcomeBG>
 
     </>

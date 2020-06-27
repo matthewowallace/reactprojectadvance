@@ -56,6 +56,7 @@ li{
     .Create{
         display: none;
     }
+
 }
 
 .nav{
@@ -305,7 +306,7 @@ li{
 
 .carousel-control-prev-icon{
     position: absolute;
-    top: 388%;
+    top: 376%;
     left: 580%;
     padding: 15px;
     border-radius: 50%;
@@ -313,7 +314,7 @@ li{
 }
 .carousel-control-next-icon{
     position: absolute;
-    top:388%;
+    top:376%;
     border-radius: 50%;
     border: 2px solid #fff;
     box-shadow: inset -2px -3px 6px rgba(60, 84, 107,0.7);
@@ -324,6 +325,7 @@ a .carousel-control-prev-icon{
     width: 50px;
     height: 50px;
     background-size: 15px;
+    background-color: black;
 }
 
 a .carousel-control-next-icon{
@@ -339,5 +341,37 @@ a .carousel-control-next-icon{
     height: auto;
     display: flex;
     justify-content: center;
+}
 
+/* mobile */
+
+@media screen and (max-width: 768px){
+
+    .carousel-control-prev-icon{
+      display: none;
+    }
+    .carousel-control-next-icon{
+        display: none;
+    }
+
+    a .carousel-control-prev-icon{
+        display: none;
+    }
+
+    a .carousel-control-next-icon{
+      display: none;
+    }
+
+    .landingpageBtn{
+        position: absolute;
+        top:49%;
+        left:25%;
+    }
+
+    .control--line div{
+        display: none;
+    }
+    .control--line div:nth-last-child(1){
+        display: none;
+    }
 }
